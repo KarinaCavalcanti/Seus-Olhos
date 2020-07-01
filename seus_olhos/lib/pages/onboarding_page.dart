@@ -12,27 +12,27 @@ class _OnboardingPageState extends State<OnboardingPage> {
   int index = 0;
 
   List<String> titles = [
-    'Seja bem-vindo ou bem-vinda!',
+    'Sejam bem-vindo ou bem-vinda!',
     'Autorize a utilização da sua câmera',
-    'Identifique o cédulas de real',
+    'Identifique cédulas de real com facilidade',
     'Reconheça textos que não estão em Braille',
-    'Antes de começar, um aviso...'
+    'Antes de começar a usar, você precisa saber que...'
   ];
 
   List<String> texts = [
-    'Estamos muito felizes que tenha nos escolhido!',
+    'Estamos muito felizes que tenha nos escolhido! Antes de começar, se atente a algumas informações importantes...',
     'Para o Seus Olhos funcionar corretamente, autorize a utilização da sua câmera',
     'Com o Seus Olhos, pessoas cegas serão auxiliadas a reconhecerem com facilidade cédulas de real',
-    'Com o Seus Olhos será possível também reconhecer textos que não estão em Braille. Para isso, basta uma fotografia!',
-    'É importante lembrar que as identificações não são exatas e sim aproximadas. Aproveite!'
+    'Com o Seus Olhos também será possível reconhecer textos que não estão em Braille. Para isso, basta uma fotografia!',
+    'É importante registrar que as identificações não são exatas e sim aproximadas. Desse modo, poderão haver erros. Aproveite!'
   ];
 
   List<String> desc = [
-    'Desenho representando várias pessoas felizes',
-    'Desenho de cadeado destrancado',
-    'Desenho de uma mão segurando um saco de dinheiro',
-    'Desenho representando um jornal com várias informações',
-    'Desenho representando uma mão fazendo o símbolo de okay'
+    'Duas pessoas se cumprimentando com o cotovelo',
+    'Cadeado destrancado',
+    'Uma mão segurando uma cédula de dinheiro',
+    'Uma pilha de papéis com informações',
+    'Placa de atenção'
   ];
 
   @override
@@ -66,7 +66,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             '${titles[position]}',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 25.0,
+                              fontSize: 20.0,
                               fontWeight: FontWeight.w500,
                             ),
                             textAlign: TextAlign.center,
@@ -82,8 +82,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               image: AssetImage(
                                 'assets/images/c${position + 1}.png',
                               ),
-                              width: 130.0,
-                              height: 130.0,
+                              width: 150.0,
+                              height: 150.0,
                             ),
                             label: "${desc[position]}",
                           ),
@@ -110,7 +110,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ),
             Container(
               width: double.infinity,
-              height: 55.0,
+              height: 80.0,
               child: Align(
                 alignment: Alignment.centerRight,
                 child: IndexedSemantics(

@@ -120,10 +120,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 50.0,
+                height: 80.0,
               ),
               Text(
-                "\© Todos os direitos reservados.",
+                "\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black54,
+                ),
               ),
             ],
           ),
