@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seus_olhos/classes/app_route.dart';
+import 'package:seus_olhos/classes/app_routes.dart';
 import 'package:seus_olhos/pages/home_page.dart';
 import 'package:seus_olhos/pages/onboarding_page.dart';
 
