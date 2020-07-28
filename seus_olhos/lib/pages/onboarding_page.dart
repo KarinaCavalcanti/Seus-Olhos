@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seus_olhos/classes/app_route.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -34,6 +35,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
     'Uma pilha de papéis com informações',
     'Placa de atenção'
   ];
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -198,7 +201,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                 )
               : FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoutes.PRINCIPAL_PAGE);
+                  },
                   child: Text(
                     'COMEÇAR',
                     style: TextStyle(
