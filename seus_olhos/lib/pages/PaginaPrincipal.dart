@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:seus_olhos/funcoes/menu_lateral.dart';
 
-class Page_Principal extends StatefulWidget {
+class PagePrincipal extends StatefulWidget {
   @override
-  _Page_PrincipalState createState() => _Page_PrincipalState();
+  _PagePrincipalState createState() => _PagePrincipalState();
 }
 
-class _Page_PrincipalState extends State<Page_Principal> {
+class _PagePrincipalState extends State<PagePrincipal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

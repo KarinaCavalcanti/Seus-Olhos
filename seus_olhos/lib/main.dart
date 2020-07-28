@@ -18,9 +18,9 @@ void main() {
       routes: {
         AppRoutes.HOME_PAGE: (_) => HomePage(),
         AppRoutes.INT_PAGE: (_) => OnboardingPage(),
-        AppRoutes.PRINCIPAL_PAGE: (_) => Page_Principal(),
+        AppRoutes.PRINCIPAL_PAGE: (_) => PagePrincipal(),
         AppRoutes.AJUDA_PAGE: (_) => Ajuda(),
-        AppRoutes.SOBRE_PAGE: (_) => Sobre_Nos(),
+        AppRoutes.SOBRE_PAGE: (_) => SobreNos(),
       },
     ),
   );
