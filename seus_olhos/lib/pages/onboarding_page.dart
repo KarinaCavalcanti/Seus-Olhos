@@ -128,7 +128,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           child: Text(
                             'PULAR',
                             style: TextStyle(
-                              color: Color(0xFF00859B),
+                              color: Color(0xFF00656B),
                               fontSize: 14.0,
                             ),
                             semanticsLabel: 'Pular apresentação do aplicativo. Página ${index + 1} de ${titles.length}',
@@ -180,7 +180,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: Text(
                     'ANTERIOR',
                     style: TextStyle(
-                      color: Color(0xFF00859B),
+                      color: Color(0xFF00656B),
                       fontSize: 16.0,
                     ),
                   ),
@@ -195,7 +195,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: Text(
                     'PRÓXIMO',
                     style: TextStyle(
-                      color: Color(0xFF00859B),
+                      color: Color(0xFF00656B),
                       fontSize: 16.0,
                     ),
                   ),
@@ -207,7 +207,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: Text(
                     'COMEÇAR',
                     style: TextStyle(
-                      color: Color(0xFF00859B),
+                      color: Color(0xFF00656B),
                       fontSize: 16.0,
                     ),
                   ),
@@ -223,7 +223,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       height: 10.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: index == i ? Color(0xFF00859B) : Color(0xFFA5CAD1),
+        color: index == i ? Color(0xFF00656B) : Color(0xFFA5CAD1),
       ),
     );
   }

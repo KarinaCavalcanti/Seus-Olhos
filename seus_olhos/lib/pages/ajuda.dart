@@ -9,18 +9,16 @@ class _AjudaState extends State<Ajuda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-         appBar: AppBar( 
-           title: Text(
-             'Seus Olhos',
-             style: TextStyle( 
-               fontSize: 25,
-             ),
-
-             ),
-           backgroundColor: Color(0XFF00BBCD),
-         ),
-
+      appBar: AppBar(
+        title: Text(
+          'AJUDA',
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xFF00656B),
+      ),
       body: Text('ajuda'),
     );
   }

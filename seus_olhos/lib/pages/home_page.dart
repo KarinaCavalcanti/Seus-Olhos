@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seus_olhos/classes/app_routes.dart';
+import 'package:seus_olhos/classes/app_route.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,12 +21,12 @@ class _HomePageState extends State<HomePage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: [
-                  0.3,
+                  0.2,
                   1.0,
                 ],
                 colors: [
-                  Color(0xFF00859B),
-                  Color(0xFF00BBDC),
+                  Color(0xFF00656B),
+                  Color(0xFF0084A1),
                 ],
               ),
               borderRadius: BorderRadius.only(
@@ -84,12 +84,12 @@ class _HomePageState extends State<HomePage> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       stops: [
-                        0.3,
+                        0.1,
                         1.0,
                       ],
                       colors: [
-                        Color(0xFF00859B),
-                        Color(0xFF00BBDC),
+                        Color(0xFF00656B),
+                        Color(0xFF0084A1),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(10.0),
@@ -115,14 +115,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 60.0, right: 10.0, left: 10.0),
-                  child: Text(
-                    '\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.',
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.black54,
-                    ),
+                Text(
+                  '\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    color: Colors.black54,
                   ),
                 ),
               ],
