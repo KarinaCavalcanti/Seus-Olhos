@@ -11,123 +11,121 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 420.0,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: [
-                      0.3,
-                      1.0,
-                    ],
-                    colors: [
-                      Color(0xFF00859B),
-                      Color(0xFF00BBDC),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(75),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(
-                        0.4,
-                      ),
-                      blurRadius: 10.0,
-                      offset: Offset(
-                        3.0,
-                        3.0,
-                      ),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'SEUS OLHOS',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30.0,
-                    ),
-                    Image.asset(
-                      'assets/images/white.png',
-                      height: 150.0,
-                      width: 150.0,
-                      semanticLabel:
-                          "Logo do aplicativo. Desenho de um celular com um olho no centro",
-                    ),
-                  ],
-                ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 420.0,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [
+                  0.2,
+                  1.0,
+                ],
+                colors: [
+                  Color(0xFF00656B),
+                  Color(0xFF0084A1),
+                ],
               ),
-              SizedBox(
-                height: 50.0,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(75),
               ),
-              Container(
-                height: 60.0,
-                width: 140.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: [
-                      0.3,
-                      1.0,
-                    ],
-                    colors: [
-                      Color(0xFF00859B),
-                      Color(0XFF00BBCD),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 10.0,
+                  offset: Offset(
+                    3.0,
+                    3.0,
+                  ),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'SEUS OLHOS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Image.asset(
+                    'assets/images/white.png',
+                    height: 170.0,
+                    width: 170.0,
+                    semanticLabel:
+                        "Logo do aplicativo. Desenho de um celular com um olho no centro",
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  height: 60.0,
+                  width: 140.0,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      stops: [
+                        0.1,
+                        1.0,
+                      ],
+                      colors: [
+                        Color(0xFF00656B),
+                        Color(0xFF0084A1),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(1.0, 2.0),
+                        blurRadius: 5.0,
+                      ),
                     ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(
-                        0.4,
-                      ),
-                      blurRadius: 2.0,
-                      offset: Offset(
-                        3.0,
-                        3.0,
-                      ),
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(AppRoutes.INT_PAGE);
-                  },
-                  child: Center(
+                  child: FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.INT_PAGE);
+                    },
                     child: Text(
-                      "INICIAR",
+                      'INICIAR',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 50.0,
-              ),
-              Text(
-                "\© Todos os direitos reservados.",
-              ),
-            ],
+                Text(
+                  '\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    color: Colors.black54,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
