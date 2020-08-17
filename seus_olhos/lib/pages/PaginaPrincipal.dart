@@ -20,6 +20,8 @@ class _PagePrincipalState extends State<PagePrincipal> {
       //onde fica a barra na parte de cima
       appBar: AppBar(
         backgroundColor: Color(0xFF00656B),
+        title: Text('PÁGINA PRINCIPAL'),
+        centerTitle: true,
       ),
       drawer: MenuLateral(),
       body: Visibility(
@@ -84,15 +86,21 @@ class _PagePrincipalState extends State<PagePrincipal> {
                       size: 45.0,
                     ),
                     onPressed: () async {
-                      this._busy = true;
-                      String imageLabels = await IL.getImageFile();
-                      Navigator.of(context).pushNamed(
-                        AppRoutes.RESPOSTA_PAGE,
-                        arguments: imageLabels,
-                      );
+                    setState(() {
+                       this._busy = true;
+                    });     
+               
+                    String imageLabels = await IL.getImageFile();
+
+                    Navigator.of(context).pushNamed(
+                    AppRoutes.RESPOSTA_PAGE, 
+                    arguments: imageLabels,
+                    ).then((retorno){
                       setState(() {
-                        this._busy = false;
-                      });
+                    this._busy = false;  
+                     });
+                    });
+                    
                     },
                     label: Text(
                       'TEXTOS',

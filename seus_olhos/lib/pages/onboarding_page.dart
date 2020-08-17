@@ -120,11 +120,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   index: 1,
                   child: index <= 3
                       ? FlatButton(
-                          onPressed: () => _pageController.animateToPage(
-                            titles.length - 1,
-                            duration: Duration(milliseconds: 10),
-                            curve: Curves.linear,
-                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(AppRoutes.PRINCIPAL_PAGE);
+                          },
                           child: Text(
                             'PULAR',
                             style: TextStyle(

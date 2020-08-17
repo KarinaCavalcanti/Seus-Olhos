@@ -6,6 +6,7 @@ class MenuLateral extends StatelessWidget {
   Widget build(BuildContext context) {
     //parte do menu hamburguinho
     return Drawer(
+      semanticLabel: 'Menu lateral expandido',
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -69,6 +70,7 @@ class MenuLateral extends StatelessWidget {
                   // Navigator.push(context, new MaterialPageRoute(
                   //   builder: (BuildContext context) => Ajuda()),
                   // );
+                  
                 },
               ),
               Divider(

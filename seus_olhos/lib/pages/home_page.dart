@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           Container(
-            height: 420.0,
+            height: MediaQuery.of(context).size.height * 0.6,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
             ),
             child: SafeArea(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
@@ -70,59 +69,69 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  height: 60.0,
-                  width: 140.0,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      stops: [
-                        0.1,
-                        1.0,
-                      ],
-                      colors: [
-                        Color(0xFF00656B),
-                        Color(0xFF0084A1),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.4,
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 60.0,
+                    width: 140.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        stops: [
+                          0.1,
+                          1.0,
+                        ],
+                        colors: [
+                          Color(0xFF00656B),
+                          Color(0xFF0084A1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(1.0, 2.0),
+                          blurRadius: 5.0,
+                        ),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(1.0, 2.0),
-                        blurRadius: 5.0,
-                      ),
-                    ],
-                  ),
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(AppRoutes.INT_PAGE);
-                    },
-                    child: Text(
-                      'INICIAR',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w500,
+                    child: Semantics(
+                      label: 'Botão, toque duplo para iniciar',
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AppRoutes.INT_PAGE);
+                        },
+                        child: Text(
+                          'INICIAR',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Text(
-                  '\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.',
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.black54,
+                  SizedBox(
+                    height: 100.0,
                   ),
-                ),
-              ],
+                  Text(
+                    '\© Todos os direitos reservados a Adrian Toninato e Karina Lucindo.',
+                    style: TextStyle(
+                      fontSize: 13.0,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
