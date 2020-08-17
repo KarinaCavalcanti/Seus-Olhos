@@ -54,7 +54,7 @@ class _ResponseState extends State<Response> {
                     ),
                     onPressed: () {
                       //ao retornar da página fecha o menu hamburguinho
-                      Navigator.of(context).pop();
+                      Navigator.of(context).pop(true);
                     },
                   ),
                 )

@@ -86,15 +86,21 @@ class _PagePrincipalState extends State<PagePrincipal> {
                       size: 45.0,
                     ),
                     onPressed: () async {
-                      this._busy = true;
-                      String imageLabels = await IL.getImageFile();
-                      Navigator.of(context).pushNamed(
-                        AppRoutes.RESPOSTA_PAGE,
-                        arguments: imageLabels,
-                      );
+                    setState(() {
+                       this._busy = true;
+                    });     
+               
+                    String imageLabels = await IL.getImageFile();
+
+                    Navigator.of(context).pushNamed(
+                    AppRoutes.RESPOSTA_PAGE, 
+                    arguments: imageLabels,
+                    ).then((retorno){
                       setState(() {
-                        this._busy = false;
-                      });
+                    this._busy = false;  
+                     });
+                    });
+                    
                     },
                     label: Text(
                       'TEXTOS',
