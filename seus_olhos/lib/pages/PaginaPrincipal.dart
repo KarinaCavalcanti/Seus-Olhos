@@ -20,6 +20,8 @@ class _PagePrincipalState extends State<PagePrincipal> {
       //onde fica a barra na parte de cima
       appBar: AppBar(
         backgroundColor: Color(0xFF00656B),
+        title: Text('PÁGINA PRINCIPAL'),
+        centerTitle: true,
       ),
       drawer: MenuLateral(),
       body: Visibility(

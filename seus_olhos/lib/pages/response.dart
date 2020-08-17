@@ -13,47 +13,53 @@ class _ResponseState extends State<Response> {
   Widget build(BuildContext context) {
     this.texto = ModalRoute.of(context).settings.arguments;
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Wrap(
-                  children: [
-                    Text(
-                      this.texto,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 10.0,
-                  bottom: 10.0,
-                ),
-                child: FlatButton.icon(
-                  icon: Icon(
-                    Icons.close,
-                    size: 23.0,
-                    color: Color(0xFF00656B),
+      body: Center(
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Wrap(
+                    children: [
+                      Text(
+                        this.texto,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
                   ),
-                  label: Text(
-                    'FECHAR',
-                    style: TextStyle(
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 10.0,
+                    bottom: 10.0,
+                  ),
+                  child: FlatButton.icon(
+                    icon: Icon(
+                      Icons.close,
+                      size: 23.0,
                       color: Color(0xFF00656B),
-                      fontSize: 18.0,
                     ),
+                    label: Text(
+                      'FECHAR',
+                      style: TextStyle(
+                        color: Color(0xFF00656B),
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      //ao retornar da página fecha o menu hamburguinho
+                      Navigator.of(context).pop();
+                    },
                   ),
-                  onPressed: () {
-                    //ao retornar da página fecha o menu hamburguinho
-                    Navigator.of(context).pop();
-                  },
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
