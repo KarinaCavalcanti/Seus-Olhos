@@ -14,14 +14,14 @@ class Loader extends StatelessWidget {
         children: <Widget>[
           CircularProgressIndicator(
             strokeWidth: 5.0,
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white10,
           ),
           SizedBox(
             height: 20,
           ),
           Text(
             this.texto,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black54),
           ),
         ],
       ),

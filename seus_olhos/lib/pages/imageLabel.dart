@@ -18,11 +18,16 @@ class ImageLabels {
       FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(file);
       VisionText visionText = await textRecognizer.processImage(visionImage);
 
-      text = visionText.text;
+       text = visionText.text;
+      
     } catch(e) {
       text = 'Algo deu errado... Tente novamente!';
     }
 
-    return text;
+    if(text.isEmpty) {
+      return "Não foi possível reconhecer!";
+    } else {
+      return text;
+    }
   }
 }
