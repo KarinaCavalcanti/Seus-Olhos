@@ -5,6 +5,7 @@ import 'package:seus_olhos/pages/onboarding_page.dart';
 import 'package:seus_olhos/pages/PaginaPrincipal.dart';
 import 'package:seus_olhos/pages/ajuda.dart';
 import 'package:seus_olhos/pages/response.dart';
+import 'package:seus_olhos/pages/responseImgRecog.dart';
 import 'package:seus_olhos/pages/sobre_nos.dart';
 
 void main() {
@@ -22,6 +23,7 @@ void main() {
         AppRoutes.AJUDA_PAGE: (_) => Ajuda(),
         AppRoutes.SOBRE_PAGE: (_) => SobreNos(),
         AppRoutes.RESPOSTA_PAGE: (_) => Response(),
+        AppRoutes.RESPOSTAIMGRECOG_PAGE: (_) => ResponseImgRecog(),
       },
     ),
   );

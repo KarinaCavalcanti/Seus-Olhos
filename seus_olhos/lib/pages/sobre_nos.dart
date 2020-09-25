@@ -25,7 +25,7 @@ class _State extends State<SobreNos> {
         child: Column(
           children: [
             Text(
-              'O aplicativo Seus Olhos busca auxiliar mais de meio  milhão de pessoas cegas em nosso país a terem uma vida mais autônoma.',
+              'O aplicativo Seus Olhos busca auxiliar mais de meio milhão de pessoas cegas em nosso país a terem uma vida mais autônoma.',
               style: TextStyle(
                 fontSize: 15.0,
                 color: Colors.black,

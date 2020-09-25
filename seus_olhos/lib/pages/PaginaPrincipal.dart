@@ -71,6 +71,17 @@ class _PagePrincipalState extends State<PagePrincipal> {
                     ),
                     onPressed: () {
                       chooseImage();
+
+                      Navigator.of(context)
+                          .pushNamed(
+                        AppRoutes.RESPOSTAIMGRECOG_PAGE,
+                        arguments: _output,
+                      ).then((retorno) {
+                        setState(() {
+                          this._busy = false;
+                        });
+                      });
+
                     },
                     label: Text(
                       'CÉDULAS',
@@ -84,9 +95,6 @@ class _PagePrincipalState extends State<PagePrincipal> {
                 SizedBox(
                   height: 30.0,
                 ),
-                _output == null
-                    ? Text("Não foi possível identificar!")
-                    : Text("${_output[0]["label"]}"),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 100.0,
@@ -118,8 +126,7 @@ class _PagePrincipalState extends State<PagePrincipal> {
                           .pushNamed(
                         AppRoutes.RESPOSTA_PAGE,
                         arguments: imageLabels,
-                      )
-                          .then((retorno) {
+                      ).then((retorno) {
                         setState(() {
                           this._busy = false;
                         });
