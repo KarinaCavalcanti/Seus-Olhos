@@ -37,7 +37,10 @@ class _PagePrincipalState extends State<PagePrincipal> {
       //onde fica a barra na parte de cima
       appBar: AppBar(
         backgroundColor: Color(0xFF00656B),
-        title: Text('PÁGINA PRINCIPAL'),
+        title: Text(
+          'PÁGINA PRINCIPAL',
+          style: TextStyle(fontSize: 16.0),
+        ),
         centerTitle: true,
       ),
       drawer: MenuLateral(),
@@ -53,43 +56,48 @@ class _PagePrincipalState extends State<PagePrincipal> {
                   width: MediaQuery.of(context).size.width,
                   height: 100.0,
                   decoration: BoxDecoration(
-                    color: Color(0xFF578ca9),
+                    color: Color(0xFF00966C),
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.6),
-                        offset: Offset(3.0, 3.0),
-                        blurRadius: 5.0,
+                        color: Colors.black.withOpacity(0.4),
+                        offset: Offset(1.0, 2.0),
+                        blurRadius: 2.0,
                       ),
                     ],
                   ),
-                  child: FlatButton.icon(
-                    icon: Icon(
-                      Icons.monetization_on,
-                      color: Colors.white,
-                      size: 45.0,
-                    ),
-                    onPressed: () {
-                      chooseImage();
-
-                      Navigator.of(context)
-                          .pushNamed(
-                        AppRoutes.RESPOSTAIMGRECOG_PAGE,
-                        arguments: _output,
-                      ).then((retorno) {
-                        setState(() {
-                          this._busy = false;
-                        });
-                      });
-
-                    },
-                    label: Text(
-                      'CÉDULAS',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/icon-money.png',
+                        width: 50.0,
+                        height: 50.0,
                       ),
-                    ),
+                      FlatButton(
+                        onPressed: () {
+                          chooseImage();
+                          Navigator.of(context)
+                              .pushNamed(
+                            AppRoutes.RESPOSTAIMGRECOG_PAGE,
+                            arguments: _output,
+                          )
+                              .then((retorno) {
+                            setState(() {
+                              this._busy = false;
+                            });
+                          });
+                        },
+                        child: Text(
+                          'CÉDULAS',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -99,46 +107,53 @@ class _PagePrincipalState extends State<PagePrincipal> {
                   width: MediaQuery.of(context).size.width,
                   height: 100.0,
                   decoration: BoxDecoration(
-                    color: Color(0xFFab5c6d),
+                    color: Color(0xFF007396),
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.6),
-                        offset: Offset(3.0, 3.0),
-                        blurRadius: 5.0,
+                        color: Colors.black.withOpacity(0.4),
+                        offset: Offset(1.0, 2.0),
+                        blurRadius: 2.0,
                       ),
                     ],
                   ),
-                  child: FlatButton.icon(
-                    icon: Icon(
-                      Icons.text_fields,
-                      color: Colors.white,
-                      size: 45.0,
-                    ),
-                    onPressed: () async {
-                      setState(() {
-                        this._busy = true;
-                      });
-
-                      String imageLabels = await IL.getImageFile();
-
-                      Navigator.of(context)
-                          .pushNamed(
-                        AppRoutes.RESPOSTA_PAGE,
-                        arguments: imageLabels,
-                      ).then((retorno) {
-                        setState(() {
-                          this._busy = false;
-                        });
-                      });
-                    },
-                    label: Text(
-                      'TEXTOS',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/icon-text.png',
+                        width: 50.0,
+                        height: 50.0,
                       ),
-                    ),
+                      FlatButton(
+                        onPressed: () async {
+                          setState(() {
+                            this._busy = true;
+                          });
+
+                          String imageLabels = await IL.getImageFile();
+
+                          Navigator.of(context)
+                              .pushNamed(
+                            AppRoutes.RESPOSTA_PAGE,
+                            arguments: imageLabels,
+                          )
+                              .then((retorno) {
+                            setState(() {
+                              this._busy = false;
+                            });
+                          });
+                        },
+                        child: Text(
+                          'TEXTOS',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
