@@ -16,11 +16,11 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: MediaQuery.of(context).size.height * 0.6,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+           decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [
+               stops: [
                   0.2,
                   1.0,
                 ],

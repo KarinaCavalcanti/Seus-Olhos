@@ -15,7 +15,7 @@ class MenuLateral extends StatelessWidget {
             stops: [0.3, 1.0],
             colors: [Color(0xFF00656B), Color(0xFF0084A1)],
           ),
-        ),
+        ), 
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: ListView(

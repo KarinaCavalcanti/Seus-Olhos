@@ -19,6 +19,7 @@ class _PagePrincipalState extends State<PagePrincipal> {
   bool _isLoading;
   File _image;
   List _output;
+  var another_output;
 
   @override
   void initState() {
@@ -75,8 +76,8 @@ class _PagePrincipalState extends State<PagePrincipal> {
                         height: 50.0,
                       ),
                       FlatButton(
-                        onPressed: () {
-                          chooseImage();
+                        onPressed: () async {
+                          _output = await chooseImage(); 
                           Navigator.of(context)
                               .pushNamed(
                             AppRoutes.RESPOSTAIMGRECOG_PAGE,
@@ -175,20 +176,25 @@ class _PagePrincipalState extends State<PagePrincipal> {
       imageStd: 127.5,
       threshold: 0.5,
     );
+    return output; 
     setState(() {
       _isLoading = false;
-      _output = output;
+      _busy = false;
     });
   }
 
   chooseImage() async {
+    setState(() {
+      _busy = true;
+    });
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
     if (image == null) return null;
     setState(() {
       _isLoading = true;
       _image = image;
     });
-    runModelOnImage(image);
+    another_output = runModelOnImage(image);
+    return another_output;
   }
 
   loadModel() async {
@@ -198,3 +204,4 @@ class _PagePrincipalState extends State<PagePrincipal> {
     );
   }
 }
+
