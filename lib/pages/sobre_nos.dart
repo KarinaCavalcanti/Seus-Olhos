@@ -14,7 +14,7 @@ class _State extends State<SobreNos> {
         title: Text(
           'SOBRE NÓS',
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: 16.0,
           ),
         ),
         centerTitle: true,

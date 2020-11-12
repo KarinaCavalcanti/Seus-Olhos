@@ -29,7 +29,7 @@ class _ResponseImgRecogState extends State<ResponseImgRecog> {
                   child: Wrap(
                     children: [ 
                       output == null 
-                      ?Text('Você fechou a câmera retorne ao menu')
+                      ?Text('Você fechou a câmera, retorne ao menu!')
                       :Text('${output[0]["label"]}'),
                     ],
                   ),

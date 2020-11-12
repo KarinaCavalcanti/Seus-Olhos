@@ -50,8 +50,7 @@ class _PagePrincipalState extends State<PagePrincipal> {
         child: Loader(texto: 'Carregando informações, aguarde...'),
         replacement: Container(
           padding: EdgeInsets.all(20),
-          child: Center(
-            child: ListView(
+          child: ListView(
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -164,7 +163,7 @@ class _PagePrincipalState extends State<PagePrincipal> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 

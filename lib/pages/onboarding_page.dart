@@ -13,7 +13,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   int index = 0;
 
   List<String> titles = [
-    'Sejam bem-vindo ou bem-vinda!',
+    'Seja bem-vindo ou bem-vinda!',
     'Autorize a utilização da sua câmera',
     'Identifique cédulas de real com facilidade',
     'Reconheça textos que não estão em Braille',
@@ -35,8 +35,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
     'Uma pilha de papéis com informações',
     'Placa de atenção'
   ];
-
-  
 
   @override
   Widget build(BuildContext context) {
