@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:seus_olhos/classes/app_route.dart';
 import 'package:seus_olhos/pages/imageLabel.dart';
@@ -12,7 +11,6 @@ class ResponseImgRecog extends StatefulWidget {
 class _ResponseImgRecogState extends State<ResponseImgRecog> {
   List output;
 
- 
   @override
   Widget build(BuildContext context) {
     this.output = ModalRoute.of(context).settings.arguments;
@@ -27,10 +25,10 @@ class _ResponseImgRecogState extends State<ResponseImgRecog> {
                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Wrap(
-                    children: [ 
-                      output == null 
-                      ?Text('Você fechou a câmera, retorne ao menu!')
-                      :Text('${output[0]["label"]}'),
+                    children: [
+                      output == null
+                          ? Text('Você fechou a câmera, retorne ao menu!')
+                          : Text('${output[0]["label"]}'),
                     ],
                   ),
                 ),

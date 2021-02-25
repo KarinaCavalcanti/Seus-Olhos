@@ -51,119 +51,118 @@ class _PagePrincipalState extends State<PagePrincipal> {
         replacement: Container(
           padding: EdgeInsets.all(20),
           child: ListView(
-              children: <Widget>[
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF00966C),
-                    borderRadius: BorderRadius.circular(10.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.4),
-                        offset: Offset(1.0, 2.0),
-                        blurRadius: 2.0,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/icon-money.png',
-                        width: 50.0,
-                        height: 50.0,
-                      ),
-                      FlatButton(
-                        onPressed: () async {
-                          _output = await chooseImage(); 
-                          Navigator.of(context)
-                              .pushNamed(
-                            AppRoutes.RESPOSTAIMGRECOG_PAGE,
-                            arguments: _output,
-                          )
-                              .then((retorno) {
-                            setState(() {
-                              this._busy = false;
-                            });
-                          });
-                        },
-                        child: Text(
-                          'CÉDULAS',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+            children: <Widget>[
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  color: Color(0xFF00966C),
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.4),
+                      offset: Offset(1.0, 2.0),
+                      blurRadius: 2.0,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 30.0,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF007396),
-                    borderRadius: BorderRadius.circular(10.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.4),
-                        offset: Offset(1.0, 2.0),
-                        blurRadius: 2.0,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/icon-text.png',
-                        width: 50.0,
-                        height: 50.0,
-                      ),
-                      FlatButton(
-                        onPressed: () async {
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/icon-money.png',
+                      width: 50.0,
+                      height: 50.0,
+                    ),
+                    FlatButton(
+                      onPressed: () async {
+                        _output = await chooseImage();
+                        Navigator.of(context)
+                            .pushNamed(
+                          AppRoutes.RESPOSTAIMGRECOG_PAGE,
+                          arguments: _output,
+                        )
+                            .then((retorno) {
                           setState(() {
-                            this._busy = true;
+                            this._busy = false;
                           });
-
-                          String imageLabels = await IL.getImageFile();
-
-                          Navigator.of(context)
-                              .pushNamed(
-                            AppRoutes.RESPOSTA_PAGE,
-                            arguments: imageLabels,
-                          )
-                              .then((retorno) {
-                            setState(() {
-                              this._busy = false;
-                            });
-                          });
-                        },
-                        child: Text(
-                          'TEXTOS',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        });
+                      },
+                      child: Text(
+                        'CÉDULAS',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 30.0,
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  color: Color(0xFF007396),
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.4),
+                      offset: Offset(1.0, 2.0),
+                      blurRadius: 2.0,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/icon-text.png',
+                      width: 50.0,
+                      height: 50.0,
+                    ),
+                    FlatButton(
+                      onPressed: () async {
+                        setState(() {
+                          this._busy = true;
+                        });
+
+                        String imageLabels = await IL.getImageFile();
+
+                        Navigator.of(context)
+                            .pushNamed(
+                          AppRoutes.RESPOSTA_PAGE,
+                          arguments: imageLabels,
+                        )
+                            .then((retorno) {
+                          setState(() {
+                            this._busy = false;
+                          });
+                        });
+                      },
+                      child: Text(
+                        'TEXTOS',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+            ],
           ),
         ),
-      
+      ),
     );
   }
 
@@ -175,7 +174,7 @@ class _PagePrincipalState extends State<PagePrincipal> {
       imageStd: 127.5,
       threshold: 0.5,
     );
-    return output; 
+    return output;
     setState(() {
       _isLoading = false;
       _busy = false;
@@ -203,4 +202,3 @@ class _PagePrincipalState extends State<PagePrincipal> {
     );
   }
 }
-
